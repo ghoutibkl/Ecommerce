@@ -1,0 +1,33 @@
+Project Structure (User)
+
+- Products (module)
+
+  Components:
+      - All Products
+      - Products Details
+  Services:
+      - product.service
+
+- Carts (module)
+
+  Components:
+      - Cart
+  Services:
+      - cart.service
+
+- Auth (module)
+
+  Components:
+      - login
+      - Register
+  Services:
+      - auth.service
+      - guard.service
+
+- Shared (module)
+
+  Components:
+      - navbar
+      - select
+  Services:
+      - ...
