@@ -10,6 +10,7 @@ export class AllProductsComponent {
 
   products: any[] = [];
   categories: any[] = [];
+  loading:boolean = false;
 
   constructor(private service:ProductsService) { }
 
@@ -19,34 +20,40 @@ export class AllProductsComponent {
   }
 
   getProducts(){
+    this.loading = true;
     this.service.getAllProducts().subscribe((res:any) => {
       this.products = res;
+      this.loading = false;
     }, error => {
       console.log(error.message);
+      this.loading = false;
     })
   }
 
   getCategories(){
+    this.loading = true;
     this.service.getAllCategories().subscribe((res:any) => {
       this.categories = res;
+      this.loading = false;
     }, error => {
       console.log(error.message);
+      this.loading = false;
     })
   }
 
   filterCategory(event: any) {
     let value = event.target.value;
-    if (value == 'All')
-      this.getProducts();
-    else
-      this.getProductsCategory(value);
+    (value == 'All') ? this.getProducts() : this.getProductsCategory(value);
   }
 
   getProductsCategory(keyword: string){
+    this.loading = true;
     this.service.getProductsByCategory(keyword).subscribe((res:any) => {
       this.products = res;
+      this.loading = false;
     }, error => {
       console.log(error.message);
+      this.loading = false;
     })
   }
 }
