@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartComponent } from './components/cart/cart.component';
+import {RouterLink} from "@angular/router";
 
 
 
@@ -9,7 +10,8 @@ import { CartComponent } from './components/cart/cart.component';
     CartComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterLink
   ]
 })
 export class CartsModule { }
