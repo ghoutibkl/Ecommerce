@@ -4,6 +4,7 @@ import { AllProductsComponent } from './components/all-products/all-products.com
 import { ProductsDetailsComponent } from './components/products-details/products-details.component';
 import {SharedModule} from '../shared/shared.module';
 import { ProductComponent } from './components/product/product.component';
+import {RouterLink} from '@angular/router';
 
 
 
@@ -16,7 +17,8 @@ import { ProductComponent } from './components/product/product.component';
   imports: [
     CommonModule,
     SharedModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    RouterLink
   ]
 })
 export class ProductsModule { }
