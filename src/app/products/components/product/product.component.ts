@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Product} from '../../models/products';
 
 @Component({
   selector: 'app-product',
@@ -7,7 +8,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class ProductComponent {
 
-  @Input() data:any = {};
+  @Input() data!:Product;
   @Output() item = new EventEmitter();
   addButton:boolean = false;
   amount: number = 0;
